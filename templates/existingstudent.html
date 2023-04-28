@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Student</title>
+</head>
+<body>
+    {% block content %}
+    <center><h3>Registered Student</h3>
+    <table border="2px solid black;">
+        <tr>
+            <th>S.no</th>
+            <th>student name</th>
+            <th>student class</th>
+            <th>student address</th>
+            <th>student school</th>
+            <th>student email</th>
+        </tr>
+        {% for reg in registered %}
+        <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{reg.s_name}}</td>
+        <td>{{reg.s_class}}</td>
+        <td>{{reg.s_address}}</td>
+        <td>{{reg.s_school}}</td>
+        <td>{{reg.s_email}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+    {% endblock content %}
+</body>
+</html>

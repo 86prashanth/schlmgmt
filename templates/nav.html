@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="{% url 'home' %}">Home</a></li>
+  <li><a href="{% url 'register' %}">New Registration</a></li>
+  <li><a href="{% url 'registered' %}">Registered Students</a></li>
+  <li><a href="{% url 'search' %}">Search</a></li>
+  <li><a href="{% url 'dropout' %}">DropOut</a></li>
+  <li style="float:right"><a class="active" href="{% url 'about' %}">About</a></li>
+</ul>
+{% block content %}{% endblock content %}
+</body>
+</html>
+
+
